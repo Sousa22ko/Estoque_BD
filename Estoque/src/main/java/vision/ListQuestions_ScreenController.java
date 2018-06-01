@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
-import Services.PergServices;
+import Services.LojaServices;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -44,7 +44,7 @@ public class ListQuestions_ScreenController{
 
 	@FXML
 	public void initialize() {
-		pergunta = PergServices.listandoPerguntas(LoggedUser.getLoggedUser().getId());
+		pergunta = LojaServices.listandoPerguntas(LoggedUser.getLoggedUser().getId());
 		listSize = pergunta.size();
 		System.out.println(listSize);
 		loadPage();

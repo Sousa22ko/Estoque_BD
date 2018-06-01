@@ -2,8 +2,8 @@ package vision;
 
 import java.io.UnsupportedEncodingException;
 
-import Services.PergServices;
-import dao.PerguntaDao;
+import Services.LojaServices;
+import dao.LojaDao;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -57,7 +57,7 @@ public class CadPergunta_Controller {
 		if(idPerguntaRecebida != -1){
 			update = true;
 			
-			Pergunta recebida = PergServices.getPerguntaById(idPerguntaRecebida);
+			Pergunta recebida = LojaServices.getPerguntaById(idPerguntaRecebida);
 			
 			pergunta.setText(recebida.getPergunta());
 			alt1.setText(recebida.getAlternativa1());
@@ -99,9 +99,9 @@ public class CadPergunta_Controller {
 
 		
 		if(update == false)
-			PergServices.adicionar(nova);
+			LojaServices.adicionar(nova);
 		else
-			PergServices.atualizar(nova);
+			LojaServices.atualizar(nova);
 		
 		try {
 			ScreenLibrary.LoadTela(ScreenConstants.IDHOME);
@@ -114,7 +114,7 @@ public class CadPergunta_Controller {
 	public void handlerAtualizarPergunta(){
 		
 		Pergunta nova = new Pergunta();
-		PerguntaDao pd = new PerguntaDao();
+		LojaDao pd = new LojaDao();
 		
 		nova.setPergunta(pergunta.getText());
 		nova.setAlternativa1(alt1.getText());

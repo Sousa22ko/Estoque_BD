@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Observable;
 import java.util.Observer;
 
-import Services.PergServices;
+import Services.LojaServices;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -107,7 +107,7 @@ public class ContraOTempo_ScreenController extends Observable implements Observe
 	}
 
 	private void loadPergunta() {
-		atual = PergServices.randomPerg();
+		atual = LojaServices.randomPerg();
 		pergunta.setText(atual.getPergunta());
 
 		op1.setText(atual.getAlternativa1());

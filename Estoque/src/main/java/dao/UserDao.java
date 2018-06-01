@@ -1,15 +1,15 @@
 package dao;
 
-import model.User;
+import model.Loja;
 
-public class UserDao extends GenericDao<User, Long> {
+public class UserDao extends GenericDao<Loja, Long> {
 
 	public UserDao() {
-		super(User.class);
+		super(Loja.class);
 	}
 	
-	public User getUserByUserName(String userName){		
-		return (User)executeQuery("from User where userName = :userName").setParameter("userName", userName)
+	public Loja getUserByUserName(String userName){		
+		return (Loja)executeQuery("from User where userName = :userName").setParameter("userName", userName)
 				.getSingleResult();
 	}
 

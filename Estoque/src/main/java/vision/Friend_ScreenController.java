@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import model.Seguindo;
-import model.User;
+import model.Loja;
 import sources.ScreenConstants;
 import util.LoggedUser;
 import util.ScreenLibrary;
@@ -33,7 +33,7 @@ public class Friend_ScreenController {
 	private SeguindoDao seguindoDao = new SeguindoDao();
 	private List<Seguindo> seguindo = new ArrayList<Seguindo>();
 
-	private List<User> users = new ArrayList<User>();
+	private List<Loja> users = new ArrayList<Loja>();
 	private int nPagina = 1;
 
 	private boolean canNext = false;

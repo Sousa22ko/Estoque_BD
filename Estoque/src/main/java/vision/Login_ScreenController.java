@@ -20,7 +20,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import model.User;
+import model.Loja;
 import sources.ScreenConstants;
 import util.ScreenLibrary;
 import util.SourcesLoader;
@@ -174,7 +174,7 @@ public class Login_ScreenController {
 		cadastrar.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				
-				User novo = new User();
+				Loja novo = new Loja();
 				novo.setNome(nomeT.getText());
 				novo.setEmail(emailT.getText());
 				novo.setUserName(userT.getText());

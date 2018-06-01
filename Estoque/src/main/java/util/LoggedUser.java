@@ -1,17 +1,17 @@
 package util;
 
-import model.User;
+import model.Loja;
 
 public class LoggedUser {
 	
-	private static User log = new User();
+	private static Loja log = new Loja();
 	
-	public static void setUserLogged(User logado){
+	public static void setUserLogged(Loja logado){
 		
 		log = logado;
 	}
 	
-	public static User getLoggedUser(){
+	public static Loja getLoggedUser(){
 		return log;
 	}
 

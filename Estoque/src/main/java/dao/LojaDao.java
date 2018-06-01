@@ -7,11 +7,11 @@ import javax.persistence.Query;
 
 import model.Pergunta;
 
-public class PerguntaDao extends GenericDao<Pergunta, Long>{
+public class LojaDao extends GenericDao<Pergunta, Long>{
 	
 	protected Object close;
 
-	public PerguntaDao() {
+	public LojaDao() {
 		super(Pergunta.class);
 	}
 	

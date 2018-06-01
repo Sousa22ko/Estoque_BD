@@ -9,13 +9,13 @@ import javax.persistence.NoResultException;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import dao.UserDao;
-import model.User;
+import model.Loja;
 import util.LoggedUser;
 
 public class UserServices {
 
 	public static UserDao userDao = new UserDao();
-	public static User user = new User();
+	public static Loja user = new Loja();
 	public static LoggedUser connected = new LoggedUser();
 
 	public static UserDao getDao() {
@@ -27,12 +27,12 @@ public class UserServices {
 	}
 
 	// persiste um usuario no bd
-	public static void adicionar(User remote) {
+	public static void adicionar(Loja remote) {
 		userDao.adicionar(remote);
 	}
 
 	// cria um usuario e persiste ele no BD
-	public static void createUserAdd(User novo){//String nome, String email, String userName, String inst, String senha,
+	public static void createUserAdd(Loja novo){//String nome, String email, String userName, String inst, String senha,
 			//String value) {
 
 
@@ -60,8 +60,8 @@ public class UserServices {
 	}
 
 	//lista todos os usuários exceto o que está logado
-	public static List<User> listUsers(){
-		List<User> listUser = new ArrayList<User>();
+	public static List<Loja> listUsers(){
+		List<Loja> listUser = new ArrayList<Loja>();
 		//listUser = userDao.getList();
 		for(int i=0; i<userDao.getList().size(); i++){
 			if(getUserConnected().getId() != userDao.getList().get(i).getId()){
@@ -72,8 +72,8 @@ public class UserServices {
 	}
 	
 	//lista todos os usuários que possuem a string 'nome' em alguma parte do seu nome, email ou username
-	public static List<User> listUsersByName(String nome){
-		List<User> listUser = new ArrayList<User>();
+	public static List<Loja> listUsersByName(String nome){
+		List<Loja> listUser = new ArrayList<Loja>();
 		for(int i=0; i<userDao.getList().size(); i++){
 			if(containsIgnoreCase(userDao.getList().get(i).getNome(), nome) ||
 					containsIgnoreCase(userDao.getList().get(i).getEmail(), nome) ||
@@ -126,7 +126,7 @@ public class UserServices {
 			throw new UnsupportedEncodingException("Senha incorreta");
 	}
 
-	public static boolean comparePassword(User u1, String senha) {
+	public static boolean comparePassword(Loja u1, String senha) {
 
 		if (u1.getSenha().equals(senha)) {
 			return true;
@@ -134,7 +134,7 @@ public class UserServices {
 			return false;
 	}
 
-	public static User getUserConnected() {
+	public static Loja getUserConnected() {
 		return LoggedUser.getLoggedUser();
 	}
 }
